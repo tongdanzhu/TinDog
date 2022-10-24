@@ -4,64 +4,95 @@
 <head>
   <meta charset="utf-8">
   <title>TinDog</title>
-  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- bootstrap: load bootstrap first then the custimize fonts setting, the one later applied is visible -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+  <!-- load custimize stylesheet after the bootstrap -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&family=Ubuntu&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <script defer src="https://use.fontawesome.com/releases/v6.2.0/js/all.js"></script>
 </head>
 
 <body>
 
   <section id="title">
 
-    <!-- Nav Bar -->
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark ps-2 pe-2">
-        <a class="navbar-brand" href="">Coding</a> <!-- 始终显示brand -->
+    <div class="container-fluid">
+
+      <!-- Nav Bar -->
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="">tindog</a> <!-- 始终显示brand -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
 
-            <ul class="navbar-nav ms-auto">
-                <li class="navbar-item">
-                    <a class="nav-link">Contact me</a>
-                </li>
-                <li class="navbar-item">
-                    <a class="nav-link">Pricing</a>
-                </li>
-                <li class="navbar-item">
-                    <a class="nav-link">Download</a>
-                </li>
-            </ul>
+          <ul class="navbar-nav ms-auto">
+            <li class="navbar-item">
+              <a class="nav-link" href="#footer">Contact me</a> <!-- Call section href="#id" -->
+            </li>
+            <li class="navbar-item">
+              <a class="nav-link" href="#pricing">Pricing</a>
+            </li>
+            <li class="navbar-item">
+              <a class="nav-link" href="#cta">Download</a>
+            </li>
+          </ul>
         </div>
-    </nav>
+      </nav>
 
-    <!-- Title -->
+      <!-- Title -->
 
-    <div>
-      <h1>Meet new and interesting dogs nearby.</h1>
-      <button type="button">Download</button>
-      <button type="button">Download</button>
+      <div class="row">
+        <!-- 两列，左列包含header，两个Button；右列为图片，分别用两个div包裹；设定断点尺寸,断点显示个数 -->
+        <div class="col-lg-6 p-2">
+          <h1>Meet new and interesting dogs nearby.</h1>
+          <!-- button叠加icon -->
+          <button class="btn btn-dark btn-lg download-button" type="button"> <i class="fa-brands fa-apple"></i> Download</button>
+          <button class="btn btn-outline-light btn-lg download-button" type="button"> <i class="fa-brands fa-google-play"></i> Download</button>
+        </div>
+
+        <div class="col-lg-6 title-image">
+          <img src="images/iphone6.png" alt="iphone-mockup">
+        </div>
+      </div>
     </div>
-    <div>
-      <img src="images/iphone6.png" alt="iphone-mockup">
-    </div>
-
   </section>
 
 
   <!-- Features -->
 
   <section id="features">
+    <div class="features-container">
+      <div class="row">
+        <div class="col-lg-4 p-4">
+          <i class="fa-solid fa-circle-check fa-4x features-icon"></i>
+          <h3>Easy to use.</h3>
+          <p class="features-detail">So easy to use, even your dog could do it.</p>
+        </div>
 
-    <h3>Easy to use.</h3>
-    <p>So easy to use, even your dog could do it.</p>
+        <div class="col-lg-4 p-4">
+          <i class="fa-solid fa-bullseye fa-4x features-icon"></i>
+          <h3>Elite Clientele</h3>
+          <p class="features-detail">We have all the dogs, the greatest dogs.</p>
+        </div>
 
-    <h3>Elite Clientele</h3>
-    <p>We have all the dogs, the greatest dogs.</p>
-
-    <h3>Guaranteed to work.</h3>
-    <p>Find the love of your dog's life or your money back.</p>
+        <div class="col-lg-4 p-4">
+          <i class="fa-solid fa-heart fa-4x features-icon"></i>
+          <h3>Guaranteed to work.</h3>
+          <p class="features-detail">Find the love of your dog's life or your money back.</p>
+        </div>
+      </div>
+    </div>
 
   </section>
 
@@ -70,13 +101,33 @@
 
   <section id="testimonials">
 
-    <h2>I no longer have to sniff other dogs for love. I've found the hottest Corgi on TinDog. Woof.</h2>
-    <img src="images/dog-img.jpg" alt="dog-profile">
-    <em>Pebbles, New York</em>
+    <div id="carouselControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000" data-bs-pause="hover">
 
-    <!-- <h2 class="testimonial-text">My dog used to be so lonely, but with TinDog's help, they've found the love of their life. I think.</h2>
-    <img class="testimonial-image" src="images/lady-img.jpg" alt="lady-profile">
-    <em>Beverly, Illinois</em> -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <h2>I no longer have to sniff other dogs for love. I've found the hottest Corgi on TinDog. Woof.</h2>
+          <img class="testimonials-image" src="images/dog-img.jpg" alt="dog-profile">
+          <em>Pebbles, New York</em>
+        </div>
+
+        <div class="carousel-item">
+          <h2>My dog used to be so lonely, but with TinDog's help, they've found the love of their life. I think.</h2>
+          <img class="testimonials-image" src="images/lady-img.jpg" alt="lady-profile">
+          <em>Beverly, Illinois</em>
+        </div>
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div> <!--  -->
+
 
   </section>
 
@@ -84,11 +135,10 @@
   <!-- Press -->
 
   <section id="press">
-    <img src="images/techcrunch.png" alt="tc-logo">
-    <img src="images/tnw.png" alt="tnw-logo">
-    <img src="images/bizinsider.png" alt="biz-insider-logo">
-    <img src="images/mashable.png" alt="mashable-logo">
-
+    <img class="press-logo" src="images/techcrunch.png" alt="tc-logo">
+    <img class="press-logo" src="images/tnw.png" alt="tnw-logo">
+    <img class="press-logo" src="images/bizinsider.png" alt="biz-insider-logo">
+    <img class="press-logo" src="images/mashable.png" alt="mashable-logo">
   </section>
 
 
@@ -97,32 +147,62 @@
   <section id="pricing">
 
     <h2>A Plan for Every Dog's Needs</h2>
-    <p>Simple and affordable price plans for your and your dog.</p>
+    <p class="pricing-deta">Simple and affordable price plans for your and your dog.</p>
 
+    <div class="row">
+      <div class="pricing-column col-lg-4 col-md-6">
+        <div class="card h-100">
+          <div class="card-header">
+            <h3>Chihuahua</h3>
+          </div>
 
-    <h3>Chihuahua</h3>
-    <h2>Free</h2>
-    <p>5 Matches Per Day</p>
-    <p>10 Messages Per Day</p>
-    <p>Unlimited App Usage</p>
-    <button type="button">Sign Up</button>
+          <div class="card-body">
+            <h2>Free</h2>
+            <p>5 Matches Per Day</p>
+            <p>10 Messages Per Day</p>
+            <p>Unlimited App Usage</p>
+            <div class="d-grid gap-2">
+              <button class="btn btn-outline-dark " type="button">Sign Up</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pricing-column col-lg-4 col-md-6">
+        <div class="card h-100">
+          <div class="card-header">
+            <h3>Labrador</h3>
+          </div>
 
+          <div class="card-body">
+            <h2>$49 / mo</h2>
+            <p>Unlimited Matches</p>
+            <p>Unlimited Messages</p>
+            <p>Unlimited App Usage</p>
+            <div class="d-grid gap-2">
+              <button class="btn btn-dark" type="button">Sign Up</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pricing-column col-lg-4">
+        <div class="card h-100">
+          <div class="card-header">
+            <h3>Mastiff</h3>
+          </div>
 
-    <h3>Labrador</h3>
-    <h2>$49 / mo</h2>
-    <p>Unlimited Matches</p>
-    <p>Unlimited Messages</p>
-    <p>Unlimited App Usage</p>
-    <button type="button">Sign Up</button>
-
-
-    <h3>Mastiff</h3>
-    <h2>$99 / mo</h2>
-    <p>Pirority Listing</p>
-    <p>Unlimited Matches</p>
-    <p>Unlimited Messages</p>
-    <p>Unlimited App Usage</p>
-    <button type="button">Sign Up</button>
+          <div class="card-body">
+            <h2>$99 / mo</h2>
+            <p>Pirority Listing</p>
+            <p>Unlimited Matches</p>
+            <p>Unlimited Messages</p>
+            <p>Unlimited App Usage</p>
+            <div class="d-grid gap-2">
+              <button class="btn btn-dark" type="button">Sign Up</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
   </section>
 
@@ -131,9 +211,9 @@
 
   <section id="cta">
 
-    <h3>Find the True Love of Your Dog's Life Today.</h3>
-    <button type="button">Download</button>
-    <button type="button">Download</button>
+    <h3 class="cta-header">Find the True Love of Your Dog's Life Today.</h3>
+    <button class="btn btn-lg btn-dark download-button"  type="button"><i class="fa-brands fa-apple"></i> Download</button>
+    <button class="btn btn-lg btn-light download-button" type="button"><i class="fa-brands fa-google-play"></i> Download</button>
 
   </section>
 
@@ -141,8 +221,11 @@
   <!-- Footer -->
 
   <footer id="footer">
-
-    <p>© Copyright TinDog</p>
+    <i class="social-icon fa-brands fa-twitter"></i>
+    <i class="social-icon fa-brands fa-facebook-f"></i>
+    <i class="social-icon fa-brands fa-instagram"></i>
+    <i class="social-icon fa-solid fa-envelope"></i>
+    <p class="copyright-detail">© Copyright 2022 TinDog</p>
 
   </footer>
 
